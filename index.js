@@ -10,18 +10,19 @@ fetch('http://localhost:3000/recipes')
       const mealType = document.createElement('p')
       const difficulty = document.createElement('p')
       const description = document.createElement('p')
-      // const image = document.createElement('img')
+      const image = document.createElement('img')
 
+      image.src = recipe.image
       recipeCard.className = "individual-card"
       recipeName.textContent = recipe.name
       rating.textContent = `Rating: ${recipe.rating}`
       mealType.textContent = `Meal Type: ${recipe.meal_type}`
       difficulty.textContent = `Difficulty: ${recipe.difficulty}`
       description.innerHTML = `Learn More: <a href="showRecipe.html?id=${recipe.id}">here!</a>`
-      console.log(recipeCard)
+
 
       cards.appendChild(recipeCard)
-      recipeCard.append(recipeName, rating, mealType, difficulty, description)
+      recipeCard.append(recipeName, image, rating, mealType, difficulty, description)
     })
   })
 
